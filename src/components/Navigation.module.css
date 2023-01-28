@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "Bold";
+  src: url("../assets/font/Futura-Bold-03.ttf");
+}
+
+@font-face {
+  font-family: "Norm";
+  src: url("../assets/font/Futura-Medium-01.ttf");
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Bold';
+	font-size: 48px;
+}
+
+.selected {
+  font-family: 'Norm';
+  color: white;
+	font-size: 48px;
+	-webkit-text-stroke: 2px black;
+  margin: 10px;
+  pointer-events: none;
+}
+
+.unselected {
+  margin: 10px; 
+}
