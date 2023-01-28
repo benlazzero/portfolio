@@ -18,6 +18,8 @@ a {
   flex-direction: column;
   font-family: 'Bold';
 	font-size: 48px;
+  min-width: 350px;
+  white-space: nowrap;
 }
 
 .selected {
