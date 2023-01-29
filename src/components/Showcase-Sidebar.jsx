@@ -2,6 +2,8 @@ import { container } from './Showcase-Sidebar.module.css'
 
 export default function Sidebar() {
   return (
-    <div className={container}>sidebar</div>
+    <div className={container}>
+      
+    </div>
   )
 }
