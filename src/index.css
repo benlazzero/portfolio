@@ -3,3 +3,13 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "Bold";
+  src: url("./assets/font/Futura-Bold-03.ttf");
+}
+
+@font-face {
+  font-family: "Norm";
+  src: url("./assets/font/Futura-Medium-01.ttf");
+}
