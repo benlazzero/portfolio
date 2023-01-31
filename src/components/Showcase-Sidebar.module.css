@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   padding-left: 40px;
-  padding-top: 40px;
+  padding-top: 5px;
   width: 220px;
   border-right: 1px solid #111111;
 }
@@ -15,11 +15,13 @@
 .filterWrapper {
   display: flex;  
   flex-direction: column;
+  gap: 25px;
 }
 
 .group {
   font-family: 'Bold';
   font-size: 1rem;
+  margin-top: 50px;
 }
 
 .icon {
@@ -38,29 +40,14 @@
 .itemWrapper {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px;
 }
 
-.selected {
+.toggled {
   color: #37ab00;
   pointer-events: none;
 }
 
-.arrgif {
-  width: 40px;
-  height: 40px;
-}
-
-.minus {
-  width: 24px;
-  height: 40px;
-  position: absolute;
-}
-
-svg {
-  display: block;
-  fill: none;
-  stroke-width: var(10px, 10px);
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.selected {
+  color: #37ab00;
 }
