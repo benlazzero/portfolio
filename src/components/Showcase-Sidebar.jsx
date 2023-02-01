@@ -32,11 +32,11 @@ export default function Sidebar() {
       <div className={classes.viewWrapper}>
         <p className={classes.group}>VIEW</p>
         <div className={classes.itemWrapper}>
-          <div onClick={HandleView} className={`${classes.icon} ${isMobile ? classes.toggled : ''}`}>
+          <div onClick={HandleView} className={`${classes.icon} ${isMobile ? classes.toggled : classes.unselected}`}>
             <Fbar plus={isMobile ? true : false}/>
             <p className={classes.item}>Mobile</p>
           </div>
-          <div onClick={HandleView} className={`${classes.icon} ${isMobile ? '' : classes.toggled}`}>
+          <div onClick={HandleView} className={`${classes.icon} ${isMobile ? classes.unselected : classes.toggled}`}>
             <Fbar plus={isMobile ? false : true}/>
             <p className={classes.item}>Desk</p>
           </div>
@@ -45,17 +45,17 @@ export default function Sidebar() {
       <p className={classes.group}>FILTERS</p>
       <div className={classes.filterWrapper}>
 
-        <div onClick={HandleFilter} className={`${classes.icon} ${isComps ? classes.selected : ''}`}>
+        <div onClick={HandleFilter} className={`${classes.icon} ${isComps ? classes.selected : classes.unselected}`}>
           <Fbar plus={isComps ? true : false} />
           <p className={classes.item}>Components</p>
         </div>
 
-        <div onClick={HandleFilter} className={`${classes.icon} ${isLand ? classes.selected : ''}`}>
+        <div onClick={HandleFilter} className={`${classes.icon} ${isLand ? classes.selected : classes.unselected}`}>
           <Fbar plus={isLand ? true : false} />
           <p className={classes.item}>Landing Pages</p>
         </div>
 
-        <div onClick={HandleFilter} className={`${classes.icon} ${isFull ? classes.selected : ''}`}>
+        <div onClick={HandleFilter} className={`${classes.icon} ${isFull ? classes.selected : classes.unselected}`}>
           <Fbar plus={isFull ? true : false} />
           <p className={classes.item}>Full Sites</p>
         </div>

@@ -22,6 +22,7 @@
   font-family: 'Bold';
   font-size: 1rem;
   margin-top: 50px;
+  user-select: none;
 }
 
 .icon {
@@ -30,11 +31,16 @@
   gap: 5px;
 }
 
+.unselected {
+  color: #bcbcbc;
+}
+
 .item {
   font-family: 'Norm';
   font-size: 1rem;
   cursor: pointer;
   margin: 0;
+  user-select: none;
 }
 
 .itemWrapper {
@@ -44,10 +50,10 @@
 }
 
 .toggled {
-  color: #37ab00;
+  color: 'black';
   pointer-events: none;
 }
 
 .selected {
-  color: #37ab00;
+  color: 'black';
 }

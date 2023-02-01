@@ -1,6 +1,7 @@
 a {
   text-decoration: none;
   color: unset;
+  user-select: none;
 }
 
 .container {
@@ -13,7 +14,7 @@ a {
   white-space: nowrap;
 }
 
-.selected {
+.unselected {
   font-family: 'Norm';
   color: white;
 	font-size: 48px;
@@ -22,6 +23,10 @@ a {
   pointer-events: none;
 }
 
-.unselected {
+.selected {
   margin: 10px; 
+}
+
+.selected:hover {
+  color: grey;
 }

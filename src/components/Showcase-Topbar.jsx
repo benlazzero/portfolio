@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Canvas} from '@react-three/fiber'
-import { Text3D, Float, Center, Stage, MeshTransmissionMaterial, Environment, Edges, Sky, Stars} from '@react-three/drei'
+import { Text3D, Float, Center, Stage, MeshTransmissionMaterial, Environment, Edges, Stars} from '@react-three/drei'
 import { container } from './Showcase-Topbar.module.css'
 import futura from '../assets/font/Futura_Medium.json'
 
@@ -32,7 +32,7 @@ export default function Topbar() {
       <Environment preset='city' blur={1}/>
       <Stars radius={.2} depth={300} count={50000} factor={2} saturation={0} speed={0} />
         <Stage shadows environment='lobby'>
-            <Float rotationIntensity={.2}>
+            <Float rotationIntensity={1}>
               <Center>
                 <Text3D 
                   letterSpacing={-.7} 

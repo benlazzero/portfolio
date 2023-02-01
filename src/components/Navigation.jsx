@@ -11,10 +11,10 @@ export default function Navigation() {
 
   return (
     <div className={container}>
-      <Link to='/' onClick={HandleLink} className={index ? selected : unselected}>
+      <Link to='/' onClick={HandleLink} className={index ? unselected : selected}>
         BENJAMIN LEE
       </Link>
-      <Link to='/contact' onClick={HandleLink} className={index ? unselected : selected}>
+      <Link to='/contact' onClick={HandleLink} className={index ? selected : unselected}>
         CONTACT
       </Link>
     </div>
