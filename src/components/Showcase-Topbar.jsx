@@ -1,42 +1,26 @@
 import { useState } from 'react'
 import { Canvas} from '@react-three/fiber'
-import { Text3D, Float, Center, Stage, MeshTransmissionMaterial, Environment, Edges, Stars} from '@react-three/drei'
+import { Text3D, Float, Center, MeshTransmissionMaterial, Environment, Edges, Stars} from '@react-three/drei'
 import { container } from './Showcase-Topbar.module.css'
 import futura from '../assets/font/Futura_Medium.json'
 
 export default function Topbar() {
-  const [rotation, setRotation] = useState([0, 0, 0]);
-  const [choice , setChoice] = useState(0)
-  const allcolors = ['pink', 'yellow', 'skyblue', 'red', 'purple']
-
-  const onMouseMove = (e) => {
-    setRotation([
-      ((e.clientY / e.target.offsetHeight - 1) * -Math.PI) / 16,
-      ((e.clientX / e.target.offsetWidth - 1) * -Math.PI) / 16,
-      0
-    ])
-  }
+  const [choice, setChoice] = useState(0)
+  const allcolors = ['yellow', 'red', 'skyblue', 'pink', 'purple']
   
   const ChangeColor = () => {
-    if (choice === 4) {
-      setChoice(0)
-    } else {
-      setChoice(choice + 1)
-    }
+    setChoice(choice => (choice + 1) % 5)
   }
   
   return (
-    <div className={container} onMouseMove={onMouseMove} >
-      <Canvas camera={{ position: [0, 0, 31], zoom: 5 }} onClick={ChangeColor}>
-      <color attach="background" args={['white']} />
-      <Environment preset='city' blur={1}/>
+    <div className={container} >
+      <Canvas camera={{ position: [3, 0, 30], zoom: 5 }} onClick={ChangeColor}>
+      <Environment preset='warehouse' blur={1}/>
       <Stars radius={.2} depth={300} count={50000} factor={2} saturation={0} speed={0} />
-        <Stage shadows environment='lobby'>
-            <Float rotationIntensity={1}>
-              <Center>
-                <Text3D 
-                  letterSpacing={-.7} 
-                  rotation={rotation} 
+        <Center>
+            <Float rotationIntensity={.5} floatIntensity={.1}>
+              <Text3D 
+                  letterSpacing={-.5} 
                   font={futura} 
                   size={5}
                   height={.01}
@@ -46,16 +30,15 @@ export default function Topbar() {
                   SHOWCASE
                 <MeshTransmissionMaterial
                   color={allcolors[choice]} 
-                  transmission={2}
+                  transmission={1}
                   thickness={20}
                   toneMapped={false} 
                   chromaticAberration={.09}
                 />
                 <Edges color='skyblue' scale={1} threshold={20} />
-                </Text3D>
-              </Center>
+              </Text3D>
             </Float>
-        </Stage>
+          </Center>
       </Canvas>
     </div>
   )
