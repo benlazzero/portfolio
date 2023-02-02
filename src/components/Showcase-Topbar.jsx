@@ -1,15 +1,14 @@
 import { useRef, useState, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { Canvas} from '@react-three/fiber'
-import { Text3D, Float, Center, MeshTransmissionMaterial, Environment, Edges, Stars } from '@react-three/drei'
+import { Text3D, Float, Center, MeshTransmissionMaterial, Environment, Edges, Sparkles, Backdrop } from '@react-three/drei'
 import { container } from './Showcase-Topbar.module.css'
 import futura from '../assets/font/Futura_Medium.json'
 
 export default function Topbar() {
   const [choice, setChoice] = useState(0)
-  const [load, setLoad] = useState(true)
   const contRef = useRef()
-  const allcolors = ['pink', 'red', 'skyblue', 'yellow', 'purple']
+  const meshcolors = ['green', 'orange', 'pink', 'skyblue', 'maroon']
   
   useEffect(() => {
       gsap.fromTo(contRef.current, {
@@ -28,7 +27,6 @@ export default function Topbar() {
     <div ref={contRef} className={container} >
       <Canvas camera={{ position: [3, 0, 30], zoom: 5 }} onClick={ChangeColor}>
       <Environment preset='warehouse' blur={1}/>
-      <Stars radius={.2} depth={300} count={50000} factor={2} saturation={0} speed={0} />
         <Center>
             <Float rotationIntensity={.5} floatIntensity={.1}>
               <Text3D 
@@ -41,16 +39,19 @@ export default function Topbar() {
                 >
                   SHOWCASE
                 <MeshTransmissionMaterial
-                  color={allcolors[choice]} 
+                  color={meshcolors[choice]} 
                   transmission={1}
                   thickness={20}
                   toneMapped={false} 
                   chromaticAberration={.09}
                 />
-                <Edges color='skyblue' scale={1} threshold={20} />
+                <Edges color='silver' scale={1} threshold={20} />
               </Text3D>
             </Float>
           </Center>
+          <Backdrop scale={[100, 20, 10]} floor={3} position={[0, -4, -3]}>
+            <meshPhysicalMaterial roughness={.1} color='white' />
+          </Backdrop>
       </Canvas>
     </div>
   )
