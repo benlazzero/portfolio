@@ -8,7 +8,7 @@ import futura from '../assets/font/Futura_Medium.json'
 export default function Topbar() {
   const [choice, setChoice] = useState(0)
   const contRef = useRef()
-  const meshcolors = ['green', 'orange', 'pink', 'skyblue', 'maroon']
+  const meshcolors = ['pink', 'orange', 'green', 'skyblue', 'maroon']
   
   useEffect(() => {
       gsap.fromTo(contRef.current, {
@@ -49,9 +49,6 @@ export default function Topbar() {
               </Text3D>
             </Float>
           </Center>
-          <Backdrop scale={[100, 20, 10]} floor={3} position={[0, -4, -3]}>
-            <meshPhysicalMaterial roughness={.1} color='white' />
-          </Backdrop>
       </Canvas>
     </div>
   )

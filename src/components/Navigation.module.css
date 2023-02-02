@@ -12,6 +12,7 @@ a {
   min-width: 350px;
   white-space: nowrap;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .unselected {
