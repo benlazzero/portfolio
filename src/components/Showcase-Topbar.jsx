@@ -1,19 +1,30 @@
-import { useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
+import { gsap } from 'gsap'
 import { Canvas} from '@react-three/fiber'
-import { Text3D, Float, Center, MeshTransmissionMaterial, Environment, Edges, Stars} from '@react-three/drei'
+import { Text3D, Float, Center, MeshTransmissionMaterial, Environment, Edges, Stars } from '@react-three/drei'
 import { container } from './Showcase-Topbar.module.css'
 import futura from '../assets/font/Futura_Medium.json'
 
 export default function Topbar() {
   const [choice, setChoice] = useState(0)
+  const contRef = useRef()
   const allcolors = ['yellow', 'red', 'skyblue', 'pink', 'purple']
+  
+  useEffect(() => {
+    gsap.fromTo(contRef.current, {
+      opacity: 0
+    }, {
+      duration: 2,
+      opacity: 1
+    })    
+  }, [])
   
   const ChangeColor = () => {
     setChoice(choice => (choice + 1) % 5)
   }
   
   return (
-    <div className={container} >
+    <div ref={contRef} className={container} >
       <Canvas camera={{ position: [3, 0, 30], zoom: 5 }} onClick={ChangeColor}>
       <Environment preset='warehouse' blur={1}/>
       <Stars radius={.2} depth={300} count={50000} factor={2} saturation={0} speed={0} />
