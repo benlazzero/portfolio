@@ -11,21 +11,24 @@ a {
 	font-size: 48px;
   min-width: 350px;
   white-space: nowrap;
+  margin-bottom: 20px;
 }
 
 .unselected {
   font-family: 'Norm';
   color: white;
 	font-size: 48px;
-	-webkit-text-stroke: 2px black;
+	-webkit-text-stroke: 2px #161616;
   margin: 10px;
   pointer-events: none;
 }
 
 .selected {
+  color: #161616;
   margin: 10px; 
 }
 
 .selected:hover {
-  color: grey;
+  text-decoration: underline;
+  transition: text-decoration .5s;
 }

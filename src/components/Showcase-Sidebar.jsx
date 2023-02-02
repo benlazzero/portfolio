@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
 import Fbar from './ui/Fbar'
 import classes from './Showcase-Sidebar.module.css'
 
 export default function Sidebar() {
+  const contRef = useRef()
   const [isMobile, setMobile] = useState(false)
   const [isComps, setComps] = useState(false)
   const [isLand, setLand] = useState(false)

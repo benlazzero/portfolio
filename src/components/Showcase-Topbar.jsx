@@ -7,16 +7,17 @@ import futura from '../assets/font/Futura_Medium.json'
 
 export default function Topbar() {
   const [choice, setChoice] = useState(0)
+  const [load, setLoad] = useState(true)
   const contRef = useRef()
-  const allcolors = ['yellow', 'red', 'skyblue', 'pink', 'purple']
+  const allcolors = ['pink', 'red', 'skyblue', 'yellow', 'purple']
   
   useEffect(() => {
-    gsap.fromTo(contRef.current, {
-      opacity: 0
-    }, {
-      duration: 1,
-      opacity: 1
-    })    
+      gsap.fromTo(contRef.current, {
+        opacity: 0
+      }, {
+        duration: 1,
+        opacity: 1
+      })    
   }, [])
   
   const ChangeColor = () => {

@@ -6,7 +6,7 @@ export default function Navigation() {
   const [index, setIndex] = useState(true)
   
   const HandleLink = () => {
-      setIndex(!index)
+    setIndex(!index)
   }
 
   return (

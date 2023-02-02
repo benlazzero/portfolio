@@ -15,20 +15,21 @@ export default function Showcase() {
       width: 0,
       height: 0,
       opacity: 0,
+      backgroundColor: 'skyblue',
     }, {
       ease: 'sine',
-      duration: 1.5,
+      duration: 1,
       opacity: 1,
-      width:'100%',
       height: '70%',
+      width:'100%',
+      backgroundColor: 'white',
       onComplete: (() => setTop(true))
     })
-    
   }, [])
 
   return (
     <div ref={contRef} className={container}>
-      <Sidebar />
+      { isTop ? <Sidebar /> : null }
       <div className={content}>
        { isTop ? <Topbar /> : null }
       </div>
