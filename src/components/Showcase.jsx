@@ -17,7 +17,7 @@ export default function Showcase() {
       opacity: 0,
     }, {
       ease: 'sine',
-      duration: 2,
+      duration: 1.5,
       opacity: 1,
       width:'100%',
       height: '70%',

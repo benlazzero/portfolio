@@ -14,7 +14,7 @@ export default function Topbar() {
     gsap.fromTo(contRef.current, {
       opacity: 0
     }, {
-      duration: 2,
+      duration: 1,
       opacity: 1
     })    
   }, [])
