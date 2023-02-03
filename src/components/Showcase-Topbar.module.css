@@ -5,7 +5,7 @@
   border-bottom: 1px solid black;
   width: 100%;
   height: 150px;
-  cursor: url('../assets/pointer.svg'), pointer;
+  cursor: pointer;
 }
 
 .header {

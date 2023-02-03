@@ -15,7 +15,7 @@ export default function Showcase() {
       width: 0,
       height: 0,
       opacity: 0,
-      backgroundColor: '#11ff11',
+      backgroundColor: '#87CEEB',
     }, {
       ease: 'sine',
       duration: 1,
