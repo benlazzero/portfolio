@@ -22,7 +22,7 @@ export default function Showcase() {
       opacity: 1,
       height: '70%',
       width:'100%',
-      backgroundColor: 'white',
+      backgroundColor: 'aliceblue',
       onComplete: (() => setTop(true))
     })
   }, [])

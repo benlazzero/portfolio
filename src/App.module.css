@@ -3,8 +3,11 @@ body {
 }
 
 .container {
+  position: relative;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100vh;
+  background-color: aliceblue;
 }
