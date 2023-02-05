@@ -17,12 +17,12 @@ function Rat(props) {
     ref.current.rotation.z = Math.sin(state.clock.elapsedTime * 10) * .0008
     if (ratFlag) {
       ref.current.position.x += .02
-      if (ref.current.position.x > viewport.width / .8) {
+      if (ref.current.position.x > viewport.width / .9) {
         setRatFlag(!ratFlag)
       }
     } else {
       ref.current.position.x -= .02
-      if (ref.current.position.x < -viewport.width / .8) {
+      if (ref.current.position.x < -viewport.width / .9) {
         setRatFlag(!ratFlag)
       }
     }

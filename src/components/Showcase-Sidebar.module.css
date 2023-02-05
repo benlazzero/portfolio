@@ -4,6 +4,7 @@
   padding-left: 40px;
   padding-top: 5px;
   width: 220px;
+  height: 100%;
   border-right: 1px solid #d5d5d5;
   animation-name: fadeIn;
   animation-duration: 1s;

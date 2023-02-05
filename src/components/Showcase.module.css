@@ -2,7 +2,7 @@
   display: flex;
   align-self: center;
   width: 100%;
-  height: 70%;
+  height: 75%;
   max-width: 1200px;
   border: 2px solid #d5d5d5;
   border-radius: 8px;
@@ -16,3 +16,28 @@
   width: 100%;
 }
 
+.underContainer {
+  width: 100%;
+}
+
+.hamContainer {
+  display: none; 
+}
+
+.sideContainer {
+  height: 100%;
+}
+
+@media screen and (max-width: 1210px) {
+  .hamContainer {
+    display: block;
+  }
+  
+  .sideContainer {
+    display: none;
+  }
+  
+  .container {
+    width: 95% !important;
+  }
+}

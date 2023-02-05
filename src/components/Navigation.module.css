@@ -33,3 +33,24 @@ a {
   text-decoration: underline;
   transition: text-decoration .5s;
 }
+
+@media screen and (max-width: 630px) {
+  .container {
+    font-size: 36px;
+  }
+  
+  .unselected {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .container {
+    font-size: 26px;
+  }
+  
+  .unselected {
+    font-size: 26px;
+  }
+
+}
