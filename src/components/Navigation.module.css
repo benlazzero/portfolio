@@ -19,13 +19,13 @@ a {
   font-family: 'Norm';
   color: white;
 	font-size: 48px;
-	-webkit-text-stroke: 2px #161616;
+	-webkit-text-stroke: 2px #0068af;
   margin: 10px;
   pointer-events: none;
 }
 
 .selected {
-  color: #161616;
+  color: #ffffff;
   margin: 10px; 
 }
 
