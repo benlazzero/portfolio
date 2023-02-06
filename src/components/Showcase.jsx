@@ -38,7 +38,7 @@ export default function Showcase() {
         <div className={classes.content}>
          { isTop ? <Topbar /> : null }
         </div>
-        <div onClick={(() => setHam(!showHam))} style={{height: showHam ? '100%' : '40px'}}>
+        <div onClick={(() => setHam(!showHam))} style={{height: showHam ? '100%' : '40px' }} className={classes.hamContainer}>
           { showHam ? <Hamburger isbig={true} /> : <Hamburger isbig={false} /> } 
         </div>
         <div style={{display: showHam ? 'none' : 'block'}}>

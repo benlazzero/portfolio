@@ -10,7 +10,7 @@ import { container } from './App.module.css'
 function Rat(props) {
   const ref = useRef()
   const { viewport } = useThree()
-  const { nodes, materials } = useGLTF('/ratr.glb')
+  const { nodes } = useGLTF('/ratr.glb')
   const [ratFlag, setRatFlag] = useState(false)
   
   useFrame((state) => {
