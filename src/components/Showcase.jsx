@@ -8,6 +8,7 @@ import classes from './Showcase.module.css'
 
 export default function Showcase() {
   const [isTop, setTop] = useState(false)
+  const [showHam, setHam] = useState(false)
   const contRef = useRef()
   
   
@@ -37,10 +38,10 @@ export default function Showcase() {
         <div className={classes.content}>
          { isTop ? <Topbar /> : null }
         </div>
-        <div style={{maxHeight: '100%'}}>
-          <Hamburger isBig={true} />
+        <div onClick={(() => setHam(!showHam))} style={{height: showHam ? '100%' : '40px'}}>
+          { showHam ? <Hamburger isbig={true} /> : <Hamburger isbig={false} /> } 
         </div>
-        <div>
+        <div style={{display: showHam ? 'none' : 'block'}}>
           content
         </div>
       </div>

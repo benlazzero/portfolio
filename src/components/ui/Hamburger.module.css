@@ -3,7 +3,10 @@
   height: 40px;
   background-color: red;
   cursor: pointer;
+}
 
-
-
+@media screen and (min-width: 1210px) {
+  .container {
+    display: none;
+  }
 }

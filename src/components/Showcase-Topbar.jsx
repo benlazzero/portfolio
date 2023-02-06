@@ -26,7 +26,7 @@ export default function Topbar() {
   return (
     <div ref={contRef} className={container} >
       <Canvas camera={{ position: [3, 0, 30], zoom: 5 }} onClick={ChangeColor}>
-      <Image url='/sky.png' scale={[145, 100]} position={[0, -35, -30]}/>
+      <Image url='/sky.png' scale={[175, 100]} position={[-10, -40, -30]}/>
       <Environment preset='warehouse' blur={.2} />
         <Center>
           <Float rotationIntensity={.5} floatIntensity={.1}>
