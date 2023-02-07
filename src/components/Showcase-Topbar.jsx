@@ -9,7 +9,7 @@ import TopText3D from './ui/TopText3D'
 export default function Topbar() {
   const [choice, setChoice] = useState(0)
   const contRef = useRef()
-  const meshcolors = ['#87CEEB', 'orange', 'green', 'pink', 'maroon']
+  const meshcolors = ['skyblue', 'white', 'maroon']
   
   useEffect(() => {
       gsap.fromTo(contRef.current, {
@@ -22,7 +22,7 @@ export default function Topbar() {
   
   
   const ChangeColor = () => {
-    setChoice(choice => (choice + 1) % 5)
+    setChoice(choice => (choice + 1) % 3)
   }
   
   return (

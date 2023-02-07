@@ -1,20 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
-import Sidebar from './Showcase-Sidebar'
 import Topbar from './Showcase-Topbar'
-import Hamburger from './ui/Hamburger'
 
 import classes from './Showcase.module.css'
 
 export default function Showcase() {
   const [isTop, setTop] = useState(false)
   const [showHam, setHam] = useState(false)
-  const [filters, setFilters] = useState({
-    mobile: false,
-    comps: false,
-    land: false,
-    full: false
-  })
+  
   const contRef = useRef()
   const hamRef = useRef()
   const hamWrap = useRef()
@@ -75,24 +68,10 @@ export default function Showcase() {
 
   return (
     <div ref={contRef} className={classes.container}>
-      <div className={classes.sideContainer}>
-        { isTop ? <Sidebar /> : null }
-      </div>
-       
       <div className={classes.underContainer}>
-
         <div className={classes.content}>
          { isTop ? <Topbar /> : null }
         </div>
-
-        <div ref={hamWrap} className={classes.hamContainer}>
-            <Sidebar ref={sideRef} isHam={true} /> 
-            <Hamburger onPress={HandleClick} ref={hamRef} isbig={true} />
-            <div style={{display: showHam ? 'none' : 'flex'}}>
-              {'content'}
-            </div>
-        </div>
-
       </div>
     </div>
   )
