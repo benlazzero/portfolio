@@ -1,18 +1,17 @@
-import { useRef, useEffect, useState } from 'react'
+import { forwardRef, useRef, useEffect } from 'react'
+import { gsap } from 'gsap'
 import classes from './Hamburger.module.css'
 
-export default function Hamburger(props) {
-  const contRef = useRef()
-  const isbig = props.isbig
-  
+const Hamburger = forwardRef((props, ref) => {
   return (
-    isbig ? 
-    <div className={classes.container} style={{height: '100%'}}>
-      hamy
+    <div onClick={props.onPress} ref={ref} className={classes.container} >
+      <div>
+        <div className={classes.line}></div>
+        <div className={classes.line}></div>
+        <div className={classes.line}></div>
+      </div>
     </div> 
-    :
-    <div className={classes.container}>
-      hamy
-    </div>
-  ) 
-}
+  )
+})
+
+export default Hamburger

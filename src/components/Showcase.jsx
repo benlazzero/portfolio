@@ -10,6 +10,8 @@ export default function Showcase() {
   const [isTop, setTop] = useState(false)
   const [showHam, setHam] = useState(false)
   const contRef = useRef()
+  const hamRef = useRef()
+  const hamWrap = useRef()
   
   
   useEffect(() => {
@@ -28,6 +30,37 @@ export default function Showcase() {
       onComplete: (() => setTop(true))
     })
   }, [])
+  
+  const HandleClick = () => {
+    console.log('clicked')
+   setHam(!showHam) 
+   if (!showHam) {
+     gsap.to(hamRef.current, {
+       duration: '1',
+       height: '100%', 
+       alignItems: 'flex-end',
+       paddingBottom: '10px',
+     })
+     gsap.to(hamWrap.current, {
+       duration: '1',
+       height: '100%' 
+     })
+   }
+   
+   if (showHam) {
+     gsap.to(hamRef.current, {
+       duration: '1',
+       height: '30px',
+       alignItems: 'center',
+       paddingBottom: '0px',
+     })
+     gsap.to(hamWrap.current, {
+       duration: '1',
+       height: '30px', 
+     })
+   }
+   
+  }
 
   return (
     <div ref={contRef} className={classes.container}>
@@ -38,8 +71,15 @@ export default function Showcase() {
         <div className={classes.content}>
          { isTop ? <Topbar /> : null }
         </div>
-        <div onClick={(() => setHam(!showHam))} style={{height: showHam ? '100%' : '40px' }} className={classes.hamContainer}>
-          { showHam ? <Hamburger isbig={true} /> : <Hamburger isbig={false} /> } 
+        <div ref={hamWrap} className={classes.hamContainer}>
+          { showHam ? 
+            <>
+              <Sidebar isHam={true}/>
+              <Hamburger onPress={HandleClick} ref={hamRef} isbig={true} />
+            </>
+            : 
+            <Hamburger onPress={HandleClick} ref={hamRef} isbig={false} /> 
+          } 
         </div>
         <div style={{display: showHam ? 'none' : 'block'}}>
           content

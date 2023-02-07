@@ -21,7 +21,7 @@ export default function TopText3D({color, changeColor}) {
     <Text3D 
       letterSpacing={-.1} 
       font={futura} 
-      size={ isSmall ? 3 : 5}
+      size={ isSmall ? 2.5 : 5}
       height={.05}
       bevelEnabled
       bevelSize={0.4}

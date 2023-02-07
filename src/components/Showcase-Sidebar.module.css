@@ -10,6 +10,18 @@
   animation-duration: 1s;
 }
 
+.mobile {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 4;
+  padding-left: 40px;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  width: 220px;
+  height: 100%;
+}
+
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
