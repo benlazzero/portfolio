@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import Topbar from './Showcase-Topbar'
+import ThreeDLand from './ThreeDLand'
 
 import classes from './Showcase.module.css'
 
@@ -71,6 +72,9 @@ export default function Showcase() {
       <div className={classes.underContainer}>
         <div className={classes.content}>
          { isTop ? <Topbar /> : null }
+        </div>
+        <div style={{height: '100%'}}>
+          <ThreeDLand />
         </div>
       </div>
     </div>
