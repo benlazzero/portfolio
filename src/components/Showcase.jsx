@@ -12,6 +12,7 @@ export default function Showcase() {
   const contRef = useRef()
   const hamRef = useRef()
   const hamWrap = useRef()
+  const sideRef = useRef()
   
   
   useEffect(() => {
@@ -32,18 +33,19 @@ export default function Showcase() {
   }, [])
   
   const HandleClick = () => {
-    console.log('clicked')
    setHam(!showHam) 
+   sideRef.current.style.display = 'flex'
    if (!showHam) {
      gsap.to(hamRef.current, {
        duration: '1',
-       height: '100%', 
-       alignItems: 'flex-end',
-       paddingBottom: '10px',
+       height: '30px', 
      })
      gsap.to(hamWrap.current, {
        duration: '1',
-       height: '100%' 
+       height: '100%', 
+     })
+     gsap.to(sideRef.current, {
+       opacity: '1'
      })
    }
    
@@ -51,12 +53,16 @@ export default function Showcase() {
      gsap.to(hamRef.current, {
        duration: '1',
        height: '30px',
-       alignItems: 'center',
-       paddingBottom: '0px',
      })
      gsap.to(hamWrap.current, {
        duration: '1',
-       height: '30px', 
+       height: '7%', 
+       onComplete: (()=> {
+        sideRef.current.style.display = 'none'
+       })
+     })
+     gsap.to(sideRef.current, {
+       opacity: '0'
      })
    }
    
@@ -72,17 +78,13 @@ export default function Showcase() {
          { isTop ? <Topbar /> : null }
         </div>
         <div ref={hamWrap} className={classes.hamContainer}>
-          { showHam ? 
-            <>
-              <Sidebar isHam={true}/>
-              <Hamburger onPress={HandleClick} ref={hamRef} isbig={true} />
-            </>
-            : 
-            <Hamburger onPress={HandleClick} ref={hamRef} isbig={false} /> 
-          } 
-        </div>
-        <div style={{display: showHam ? 'none' : 'block'}}>
-          content
+          <>
+            <Sidebar ref={sideRef} isHam={true} /> 
+            <Hamburger onPress={HandleClick} ref={hamRef} isbig={true} />
+            <div style={{display: showHam ? 'none' : 'block'}}>
+              content
+            </div>
+          </>
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState, forwardRef } from 'react'
 import Fbar from './ui/Fbar'
 import classes from './Showcase-Sidebar.module.css'
 
-export default function Sidebar({ isHam }) {
+const Sidebar = forwardRef((props, ref) => {
   const [isMobile, setMobile] = useState(false)
   const [isComps, setComps] = useState(false)
   const [isLand, setLand] = useState(false)
@@ -28,7 +28,7 @@ export default function Sidebar({ isHam }) {
   }
   
   return (
-    <div className={isHam ? classes.mobile : classes.container}>
+    <div ref={ref} className={props.isHam ? classes.mobile : classes.container}>
       <div className={classes.viewWrapper}>
         <p className={classes.group}>VIEW</p>
         <div className={classes.itemWrapper}>
@@ -63,4 +63,6 @@ export default function Sidebar({ isHam }) {
       </div>
     </div>
   )
-}
+})
+
+export default Sidebar

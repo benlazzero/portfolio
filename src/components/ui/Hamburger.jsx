@@ -8,7 +8,7 @@ const Hamburger = forwardRef((props, ref) => {
       <div>
         <div className={classes.line}></div>
         <div className={classes.line}></div>
-        <div className={classes.line}></div>
+        <div className={classes.line} style={{marginBottom: '0'}}></div>
       </div>
     </div> 
   )
