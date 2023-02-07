@@ -9,11 +9,16 @@ import classes from './Showcase.module.css'
 export default function Showcase() {
   const [isTop, setTop] = useState(false)
   const [showHam, setHam] = useState(false)
+  const [filters, setFilters] = useState({
+    mobile: false,
+    comps: false,
+    land: false,
+    full: false
+  })
   const contRef = useRef()
   const hamRef = useRef()
   const hamWrap = useRef()
   const sideRef = useRef()
-  
   
   useEffect(() => {
     gsap.fromTo(contRef.current, {
@@ -31,41 +36,41 @@ export default function Showcase() {
       onComplete: (() => setTop(true))
     })
   }, [])
-  
+
   const HandleClick = () => {
-   setHam(!showHam) 
-   sideRef.current.style.display = 'flex'
-   if (!showHam) {
-     gsap.to(hamRef.current, {
+    setHam(!showHam) 
+    sideRef.current.style.display = 'flex'
+
+    if (!showHam) {
+      gsap.to(hamRef.current, {
        duration: '1',
        height: '30px', 
-     })
-     gsap.to(hamWrap.current, {
+      })
+      gsap.to(hamWrap.current, {
        duration: '1',
        height: '100%', 
-     })
-     gsap.to(sideRef.current, {
+      })
+      gsap.to(sideRef.current, {
        opacity: '1'
-     })
-   }
-   
-   if (showHam) {
-     gsap.to(hamRef.current, {
-       duration: '1',
-       height: '30px',
-     })
-     gsap.to(hamWrap.current, {
-       duration: '1',
-       height: '7%', 
-       onComplete: (()=> {
-        sideRef.current.style.display = 'none'
-       })
-     })
-     gsap.to(sideRef.current, {
-       opacity: '0'
-     })
-   }
-   
+      })
+    }
+ 
+    if (showHam) {
+      gsap.to(hamRef.current, {
+        duration: '1',
+        height: '30px',
+      })
+      gsap.to(hamWrap.current, {
+        duration: '1',
+        height: '7%', 
+        onComplete: (()=> {
+          sideRef.current.style.display = 'none'
+        })
+      })
+      gsap.to(sideRef.current, {
+        opacity: '0'
+      })
+    }
   }
 
   return (
@@ -73,19 +78,21 @@ export default function Showcase() {
       <div className={classes.sideContainer}>
         { isTop ? <Sidebar /> : null }
       </div>
+       
       <div className={classes.underContainer}>
+
         <div className={classes.content}>
          { isTop ? <Topbar /> : null }
         </div>
+
         <div ref={hamWrap} className={classes.hamContainer}>
-          <>
             <Sidebar ref={sideRef} isHam={true} /> 
             <Hamburger onPress={HandleClick} ref={hamRef} isbig={true} />
-            <div style={{display: showHam ? 'none' : 'block'}}>
-              content
+            <div style={{display: showHam ? 'none' : 'flex'}}>
+              {'content'}
             </div>
-          </>
         </div>
+
       </div>
     </div>
   )
